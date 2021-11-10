@@ -1,0 +1,59 @@
+{
+  "name": "wc-menu-button",
+  "version": "3.1.1",
+  "description": "A simple, animating menu button built as a Web Component",
+  "keywords": [
+    "web component",
+    "hamburger",
+    "menu",
+    "animating",
+    "web-component",
+    "custom-element"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wes566/wc-menu-button"
+  },
+  "author": "wes@goulet.dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wes566/wc-menu-button"
+  },
+  "homepage": "https://github.com/wes566/wc-menu-button",
+  "module": "wc-menu-button.js",
+  "main": "wc-menu-button.js",
+  "source": "wc-menu-button.js",
+  "types": "wc-menu-button.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc && npm run minify",
+    "minify": "terser wc-menu-button.js -o wc-menu-button.min.js -c -m",
+    "lint": "npm run lint:formatting && npm run lint:size",
+    "lint:formatting": "prettier --check .",
+    "lint:size": "bundlesize",
+    "fix:formatting": "prettier --write ."
+  },
+  "devDependencies": {
+    "bundlesize": "^0.18.0",
+    "prettier": "^2.1.2",
+    "terser": "^5.3.5",
+    "typescript": "^4.0.3"
+  },
+  "files": [
+    "wc-menu-button.js",
+    "wc-menu-button.min.js",
+    "wc-menu-button.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "import": "./wc-menu-button.js",
+      "default": "./wc-menu-button.js"
+    }
+  },
+  "bundlesize": [
+    {
+      "path": "./wc-menu-button.min.js",
+      "maxSize": "1.2 KB"
+    }
+  ]
+}
